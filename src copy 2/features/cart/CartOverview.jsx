@@ -1,0 +1,37 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getTotal, getTotalCartPrice, getTotalCartQuantity } from './cartSlice';
+import { useEffect } from 'react';
+
+function CartOverview() {
+  const pizzasInCart = useSelector((state) => state.cart.pizzaObjects);
+
+  const totalAmount = useSelector(getTotalCartPrice);
+  const totalItems = useSelector(getTotalCartQuantity);
+
+  if (pizzasInCart.length === 0) {
+    return;
+  }
+
+  return (
+    <div className=" flex  items-center justify-between bg-stone-800 p-4 text-sm uppercase text-stone-200 sm:px-6 md:text-base">
+      <p className="space-x-4 font-semibold text-stone-300 sm:space-x-6 ">
+        <span>
+          {/* {pizzasInCart.reduce((total, item) => total + item.quantity, 0)}{' '} */}
+          {totalItems + ' '}
+          pizzas
+        </span>
+        <span>
+          {/* {pizzasInCart.reduce(
+            (total, item) => total + item.quantity * item.unitPrice,
+            0,
+          )} */}
+          {totalAmount}$
+        </span>
+      </p>
+      <Link to="/cart">Open cart &rarr;</Link>
+    </div>
+  );
+}
+
+export default CartOverview;
