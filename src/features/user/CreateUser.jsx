@@ -14,7 +14,7 @@ function CreateUser() {
 
     if (!username) return;
     dispatch(updateName(username));
-    navigate('/menu');
+    navigate('/pizza-shop/menu');
   }
 
   return (

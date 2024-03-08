@@ -18,7 +18,7 @@ function Home() {
       {username === '' ? (
         <CreateUser />
       ) : (
-        <Button to="/menu" type="primary">
+        <Button to="/pizza-shop/menu" type="primary">
           Continue ordering, {username}
         </Button>
       )}
