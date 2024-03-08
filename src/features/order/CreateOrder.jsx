@@ -166,7 +166,7 @@ export async function action({ request }) {
   // Do NOT overuse
   store.dispatch(clearCart());
 
-  return redirect(`/order/${newOrder.id}`);
+  return redirect(`/pizza-shop/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
