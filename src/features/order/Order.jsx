@@ -18,9 +18,10 @@ function Order() {
 
   useEffect(
     function () {
-      if (!fetcher.data && fetcher.state === 'idle') fetcher.load('/menu');
+      if (!fetcher.data && fetcher.state === 'idle')
+        fetcher.load('/pizza-shop/menu');
     },
-    [fetcher]
+    [fetcher],
   );
 
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
