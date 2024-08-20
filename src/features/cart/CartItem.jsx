@@ -5,7 +5,7 @@ import UpdateItemQuantity from './UpdateItemQuantity';
 import { getCurrentQuantityById } from './cartSlice';
 
 // Testing deployment
-
+// testing adding comment
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;
 
